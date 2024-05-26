@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start":"ts-node"
+    "dev": "dotenv -c development -- ts-node index.ts"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "commander": "^12.1.0",
     "openai": "^4.47.1"
   },
   "devDependencies": {
+    "dotenv-cli": "^7.4.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }

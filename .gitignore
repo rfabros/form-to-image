@@ -96,3 +96,9 @@ dist
 
 # FuseBox cache
 .
+
+input-files/
+temp-responses/
+
+.env
+.env.development

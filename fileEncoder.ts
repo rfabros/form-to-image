@@ -1,5 +1,4 @@
 import { readFile } from 'fs/promises';
-import path from 'path';
 
 export async function convertImageToBase64(filePath: string): Promise<string> {
   try {
