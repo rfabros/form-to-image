@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "dotenv -c development -- ts-node index.ts"
+    "dev": "dotenv -c development -- ts-node ./src/index.ts"
   },
   "author": "",
   "license": "ISC",
