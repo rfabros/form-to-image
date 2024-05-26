@@ -6,7 +6,7 @@ import { convertImageToBase64 } from './fileEncoder';
 
 export async function generateHtml() {
     const openai = new OpenAI();
-    const folderPath = path.join(__dirname, 'input-files'); // Replace with your folder path
+    const folderPath = path.join(process.cwd(), 'input-files'); // Replace with your folder path
 
     try {
         const fileNames = await listFilesInFolder(folderPath);
@@ -45,7 +45,7 @@ export async function generateHtml() {
             throw new Error('Response content is null or undefined.');
         }
 
-        const filePath = path.join(__dirname, 'temp-responses', `${generateDateSuffix()}.txt`);
+        const filePath = path.join(process.cwd(), 'temp-responses', `${generateDateSuffix()}.txt`);
         await writeFile(filePath, content);
 
         return filePath;

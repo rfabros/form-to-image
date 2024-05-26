@@ -1,5 +1,5 @@
 #!/usr/bin/env -S npm run tsn -T
-import { generateHtml } from './html-generator'
+import { generateHtml } from './src/html-generator'
 import { Command } from 'commander';
 import path from 'path';
 
