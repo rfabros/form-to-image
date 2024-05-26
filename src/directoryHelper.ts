@@ -1,4 +1,5 @@
-import { readdir, writeFile } from 'fs/promises';
+import { readdir, writeFile, readFile } from 'fs/promises';
+import path from 'path';
 
 export async function listFilesInFolder(folderPath: string): Promise<string[]> {
     try {
@@ -12,6 +13,17 @@ export async function listFilesInFolder(folderPath: string): Promise<string[]> {
         console.error('Error reading the folder:', error);
         throw error;
     }
+}
+
+export async function readHtmlFile(fileName: string){
+    const filePath = path.join(process.cwd(), 'temp-responses', fileName);
+    return await readFile(filePath);
+}
+
+export async function writeNewResponseHtml(html: string) {
+    const filePath = path.join(process.cwd(), 'temp-responses', `${generateDateSuffix()}.html`);
+    await writeFile(filePath, html);
+    return filePath;
 }
 
 export function generateDateSuffix(): string {

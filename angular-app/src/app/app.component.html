@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reddit Mockup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #FF4500;
+      padding: 10px;
+      color: white;
+    }
+    #main-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    aside, main {
+      padding: 15px;
+    }
+    aside {
+      min-width: 250px;
+      max-width: 300px;
+      flex: 1;
+      background-color: #f6f7f8;
+    }
+    main {
+      flex: 4;
+      background-color: white;
+    }
+    .post {
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .post img {
+      width: 100%;
+    }
+    .communities {
+      list-style: none;
+      padding: 0;
+    }
+    .communities li {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      #main-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1>Reddit</h1>
+    <div>
+      <button>Get app</button>
+      <button>Log In</button>
+    </div>
+  </div>
+</header>
+
+<div id="main-content">
+  <aside>
+    <nav>
+      <h3>Home</h3>
+      <ul>
+        <li><a href="#">Popular</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h3>Topics</h3>
+      <ul>
+        <li>Internet Culture (Viral)</li>
+        <li>Games</li>
+        <li>Q&As</li>
+        <li>Technology</li>
+        <li>Pop Culture</li>
+        <li>Movies & TV</li>
+      </ul>
+      <a href="#">See more</a>
+    </section>
+
+    <section>
+      <h3>Resources</h3>
+      <ul>
+        <li>About Reddit</li>
+        <li>Advertise</li>
+        <li>Help</li>
+        <li>Blog</li>
+        <li>Careers</li>
+        <li>Press</li>
+      </ul>
+    </section>
+  </aside>
+
+  <main>
+    <div class="trending-news">
+      <h2>Trending News</h2>
+      <div style="display: flex; overflow-x: scroll;">
+        <article style="flex: 1; min-width: 100px; margin-right: 10px;">
+          <img src="https://via.placeholder.com/150" alt="news-image">
+          <h3>Nicki Minaj arrest</h3>
+          <p>Nicki Minaj has been freed after arrest...</p>
+        </article>
+        <article style="flex: 1; min-width: 100px; margin-right: 10px;">
+          <img src="https://via.placeholder.com/150" alt="news-image">
+          <h3>Celtics vs. Pacers</h3>
+          <p>GAME THREAD: Boston Celtics (2-0)...</p>
+        </article>
+        <article style="flex: 1; min-width: 100px; margin-right: 10px;">
+          <img src="https://via.placeholder.com/150" alt="news-image">
+          <h3>Grayson Murray death</h3>
+          <p>PGA Tour star Grayson Murray dead at...</p>
+        </article>
+        <article style="flex: 1; min-width: 100px; margin-right: 10px;">
+          <img src="https://via.placeholder.com/150" alt="news-image">
+          <h3>Oilers vs. Stars</h3>
+          <p>Playoff Game Thread: Edmonton Oilers...</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="post">
+      <h2>Confirmed! Richard x barbie</h2>
+      <p>Posted by u/ChikaPH 4 hr. ago</p>
+      <img src="https://via.placeholder.com/300" alt="post-image">
+    </div>
+  </main>
+
+  <aside>
+    <section>
+      <h3>Popular Communities</h3>
+      <ul class="communities">
+        <li>r/NoStupidQuestions</li>
+        <li>r/Minecraft</li>
+        <li>r/Fitness</li>
+        <li>r/DnD</li>
+        <li>r/videos</li>
+      </ul>
+      <a href="#">See more</a>
+    </section>
+  </aside>
+</div>
+
+</body>
+</html>

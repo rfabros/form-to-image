@@ -2,17 +2,19 @@
 import { generateHtml } from './src/html-generator'
 import { Command } from 'commander';
 import path from 'path';
+import { readHtmlFile } from './src/directoryHelper';
+import { writeFile } from 'fs/promises';
 
 const program = new Command();
 
 const handleGenerateFromImage = async () => {
   const filePath = await generateHtml();
-  await generateAngularApp(filePath as string);
+  const fileName = path.basename(filePath as string);
+  await generateAngularApp(fileName);
 };
 
 const regenerateAngularApplication = async (filename: string) => {
-  const filePath = path.join(__dirname, 'temp-responses', `${filename}.txt`);
-  await generateAngularApp(filePath);
+  await generateAngularApp(filename);
 };
 
 program
@@ -33,9 +35,18 @@ program
 program.parse(process.argv);
 
 async function generateAngularApp(filePath: string) {
-  if(!filePath){
+  if (!filePath) {
     throw new Error("Invalid path");
   }
-  
+
+  //angular-app/src/app/app.component.html
+  const appPath = path.join(process.cwd(), 'angular-app/src/app/app.component.html');
+  try {
+    const content = await readHtmlFile(filePath);
+    await writeFile(appPath, content, 'utf8');
+    console.log(`File has been written successfully to ${appPath}`);
+  } catch (error) {
+    console.error('Error writing to the file:', error);
+  }
 }
 
